@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>xiaoguai233.top</title>
+  
+  <subtitle>AkiyamaMinami</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2018-08-20T15:00:20.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>小怪</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>碎碎念</title>
+    <link href="http://yoursite.com//blog/2018/08/20/Test/"/>
+    <id>http://yoursite.com//blog/2018/08/20/Test/</id>
+    <published>2018-08-20T15:00:20.000Z</published>
+    <updated>2018-08-20T15:00:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>今天的天气依旧很热,砖头依旧那么烫手,富婆依旧没有出现  </p></blockquote><p><strong>有点累</strong></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;今天的天气依旧很热,砖头依旧那么烫手,富婆依旧没有出现  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;有点累&lt;/strong&gt;&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="记录" scheme="http://yoursite.com/tags/%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com//blog/2018/03/26/hello-world/"/>
+    <id>http://yoursite.com//blog/2018/03/26/hello-world/</id>
+    <published>2018-03-26T06:24:02.000Z</published>
+    <updated>2018-03-26T06:24:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>按照惯例让我先吼一句:<strong><em>Hello World!</em></strong>。</p></blockquote><h2 id="关于博客"><a href="#关于博客" class="headerlink" title="关于博客"></a>关于博客</h2><ul><li>博客托管在GitHubPages，整体使用<a href="https://hexo.io/" target="_blank" rel="noopener">Hexo框架</a>+<a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">NexT主题</a>。</li></ul><ul><li>域名就从阿里云买的，至于为什么用的.top，首年2块超便宜，续费16元/年。注册的时候发现不知道哪位兄dei已经注册了xiaoguai.top，最终注册为 <strong>xiaoguai233.top</strong></li></ul><ul><li>此博客单纯是自己的Playground。(喂，你以为写Swift呢？)</li></ul><ul><li>算是真正意义上属于自己的第一个独立博客。(<del>也是最后一个</del>)<a id="more"></a></li></ul><h2 id="非正式的自我介绍"><a href="#非正式的自我介绍" class="headerlink" title="非正式的自我介绍"></a>非正式的自我介绍</h2><ul><li>这里小怪。(没有233)</li></ul><ul><li>喜欢吃。(炒饭什么的最棒了)</li></ul><ul><li>喜欢看动画片。(曾经是偶像厨)</li></ul><ul><li>不太会聊天，脑子比较笨。(&gt; _ &lt;)</li></ul><ul><li><p>Akiraが好きです。</p><p>感谢您的阅读。</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;按照惯例让我先吼一句:&lt;strong&gt;&lt;em&gt;Hello World!&lt;/em&gt;&lt;/strong&gt;。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;关于博客&quot;&gt;&lt;a href=&quot;#关于博客&quot; class=&quot;headerlink&quot; title=&quot;关于博客&quot;&gt;&lt;/a&gt;关于博客&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;博客托管在GitHubPages，整体使用&lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo框架&lt;/a&gt;+&lt;a href=&quot;https://github.com/theme-next/hexo-theme-next&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;NexT主题&lt;/a&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;域名就从阿里云买的，至于为什么用的.top，首年2块超便宜，续费16元/年。注册的时候发现不知道哪位兄dei已经注册了xiaoguai.top，最终注册为 &lt;strong&gt;xiaoguai233.top&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;此博客单纯是自己的Playground。(喂，你以为写Swift呢？)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;算是真正意义上属于自己的第一个独立博客。(&lt;del&gt;也是最后一个&lt;/del&gt;)
+    
+    </summary>
+    
+    
+      <category term="记录" scheme="http://yoursite.com/tags/%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
+  
+</feed>
