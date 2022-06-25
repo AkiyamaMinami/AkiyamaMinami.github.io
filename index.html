@@ -1,19 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mobs</title>
-  <style>
-    .page-container {
-      text-align: center;
-    }
-  </style>
-</head>
-<body>
-  <div class="page-container">
-    <h3>Hi, I'm Mobs</h3>
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobs</title>
+    <link href="https://vjs.zencdn.net/7.19.2/video-js.css" rel="stylesheet" />
+    <style>
+      html,
+      body {
+        height: 100vh;
+        margin: 0;
+        padding-top: 25px;
+        overflow: hidden;
+      }
+      .introduction-container {
+        text-align: center;
+        color: #2c3e50;
+        font-family: sans-serif;
+      }
+      .video-container {
+        display: flex;
+        justify-content: center;
+      }
+      .vjs-big-play-button {
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%);
+        background: none !important;
+        border: none !important;
+      }
+      .vjs-big-play-button {
+        font-size: 6.5em !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="introduction-container">
+      <h1>Hi, I'm Mobs</h1>
+      <h1>And</h1>
+    </div>
+    <div class="video-container">
+      <video
+        class="video-js"
+        controls
+        preload="auto"
+        width="309"
+        height="280"
+        poster="原来是小瘪三--吴彦祖.jpg"
+        data-setup="{}"
+      >
+        <source src="原来是小瘪三.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div class="introduction-container">
+      <h1>: )</h1>
+    </div>
+    <script src="https://vjs.zencdn.net/7.19.2/video.min.js"></script>
+  </body>
 </html>
