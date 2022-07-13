@@ -15,5 +15,5 @@ bannerBrand:
   bgImage: "/bg.svg"
   heroText: vuepress-reco
 isShowTitleInHome: true
-navbar: false
+navbar: true
 ---
