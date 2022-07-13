@@ -8,7 +8,7 @@ jobs:
       uses: actions/checkout@master
 
     - name: Build and Deploy
-      uses: AkiyamaMinami/akiyamaminami.github.io@master
+      uses: jenkey2011/vuepress-deploy@master
       env:
         ACCESS_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
         TARGET_REPO: AkiyamaMinami/akiyamaminami.github.io
