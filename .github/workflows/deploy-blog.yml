@@ -1,60 +1,42 @@
 name: Deploy Blog
-on: [push]
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [master]
+
 jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
+  deploy:
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [14]
+    runs-on: ${{ matrix.os }}
     steps:
-    - name: Checkout
-      uses: actions/checkout@master
 
-    - name: Build and Deploy
-      uses: jenkey2011/vuepress-deploy@master
-      env:
-        ACCESS_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
-        TARGET_REPO: AkiyamaMinami/akiyamaminami.github.io
-        TARGET_BRANCH: gh_pages
-        BUILD_SCRIPT: pnpm && pnpm docs:build
-        BUILD_DIR: docs/.vuepress/dist
-        CNAME: mobs.fun
-# name: Deploy Blog
+      - uses: actions/checkout@v2
 
-# on:
-#   workflow_dispatch:
-#   push:
-#     branches: [master]
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7
 
-# jobs:
-#   deploy:
-#     strategy:
-#       matrix:
-#         os: [ubuntu-latest]
-#         node: [14]
-#     runs-on: ${{ matrix.os }}
-#     steps:
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: pnpm
 
-#       - uses: actions/checkout@v2
+      - name: Install
+        run: pnpm install --frozen-lockfile
 
-#       - name: Install pnpm
-#         uses: pnpm/action-setup@v2
-#         with:
-#           version: 7
+      - name: Build
+        run: pnpm docs:build
 
-#       - name: Setup Node.js
-#         uses: actions/setup-node@v3
-#         with:
-#           node-version: ${{ env.NODE_VERSION }}
-#           cache: pnpm
-
-#       - name: Install
-#         run: pnpm install --frozen-lockfile
-
-#       - name: Build
-#         run: pnpm docs:build
-
-#       - name: 📚 Deploy Docs to GitHub Pages 📚
-#         uses: peaceiris/actions-gh-pages@v3
-#         with:
-#           github_token: ${{ secrets.DEPLOY_TOKEN }}
-#           cname: mobs.fun
-#           publish_dir: docs/.vuepress/dist
-#           publish_branch: gh-page
+      - name: 📚 Deploy Docs to GitHub Pages 📚
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.DEPLOY_TOKEN }}
+          cname: mobs.fun
+          publish_dir: docs/.vuepress/dist
+          publish_branch: gh-page
