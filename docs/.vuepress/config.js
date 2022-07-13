@@ -3,6 +3,6 @@ module.exports = {
   description: "👻👻👻",
   theme: "reco",
   themeConfig: {
-    nav: [{ text: "Home", link: "/" }],
+    type: 'blog'
   },
 };
