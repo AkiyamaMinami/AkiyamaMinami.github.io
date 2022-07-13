@@ -27,9 +27,8 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: pnpm
 
-      - name: Install
-        # run: pnpm install --frozen-lockfile
-        run: pnpm install
+      # - name: Install
+      #   run: pnpm install --frozen-lockfile
 
       - name: Build
         run: pnpm docs:build
