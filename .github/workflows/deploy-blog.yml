@@ -1,32 +1,42 @@
-name: Build and Deploy
-on: [push]
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@master
+name: Deploy Blog
 
-    - name: Install pnpm
+on:
+  workflow_dispatch:
+  push:
+    branches: [master]
+
+jobs:
+  deploy:
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [14]
+    runs-on: ${{ matrix.os }}
+    steps:
+
+      - uses: actions/checkout@v2
+
+      - name: Install pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 7
 
-    - name: Setup Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: pnpm
 
-    - name: Install
+      - name: Install
         run: pnpm install --frozen-lockfile
 
-    - name: vuepress-deploy
-      uses: jenkey2011/vuepress-deploy@master
-      env:
-        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        TARGET_REPO: AkiyamaMinami/akiyamaminami.github.io
-        TARGET_BRANCH: gh_pages
-        BUILD_SCRIPT: pnpm && pnpm docs:build
-        BUILD_DIR: docs/.vuepress/dist
-        CNAME: https://mobs.fun
+      - name: Build
+        run: pnpm build && pnpm docs:build
+
+      - name: 📚 Deploy Docs to GitHub Pages 📚
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.DEPLOY_TOKEN }}
+          cname: mobs.fun
+          publish_dir: blog/.vuepress/dist
+          publish_branch: gh-page
