@@ -38,5 +38,5 @@ jobs:
         with:
           github_token: ${{ secrets.DEPLOY_TOKEN }}
           cname: mobs.fun
-          publish_dir: blog/.vuepress/dist
+          publish_dir: docs/.vuepress/dist
           publish_branch: gh-page
