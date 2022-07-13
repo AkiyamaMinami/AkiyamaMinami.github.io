@@ -26,9 +26,10 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           cache: pnpm
-
+      - name: Set pnpm
+        run: pnpm config set auto-install-peers true
       - name: Install
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install -frozen-lockfile
 
       - name: Build
         run: pnpm docs:build
