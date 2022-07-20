@@ -5,7 +5,6 @@
 set -e
 
 # 更新master文件
-git init
 git add -A
 git commit -m 'update master'
 git push origin master
