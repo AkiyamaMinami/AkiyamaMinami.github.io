@@ -7,7 +7,7 @@ set -e
 # 更新master文件
 git add -A
 git commit -m 'update master'
-git push origin:master
+git push master
 
 # 生成静态文件
 pnpm run docs:build
