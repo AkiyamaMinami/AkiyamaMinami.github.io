@@ -1,18 +1,27 @@
 module.exports = {
   title: "Mobs Blog",
   theme: "reco",
-  description: 'slowly slowly',
+  description: "slowly slowly",
+  head: [
+    [
+      "meta",
+      {
+        name: "viewport",
+        content: "width=device-width,initial-scale=1,user-scalable=no",
+      },
+    ],
+  ],
   themeConfig: {
-    type: 'blog',
-    logo: 'https://s2.loli.net/2022/07/21/K4R6ZCIUyzxarHQ.png',
-    author: 'mobs',
-    authorAvatar: 'https://s2.loli.net/2022/07/21/K4R6ZCIUyzxarHQ.png',
+    type: "blog",
+    logo: "https://s2.loli.net/2022/07/21/K4R6ZCIUyzxarHQ.png",
+    author: "mobs",
+    authorAvatar: "https://s2.loli.net/2022/07/21/K4R6ZCIUyzxarHQ.png",
     // 不显示模式调节按钮
     modePicker: false,
     // valine
     valineConfig: {
-      appId: 'bbOLe8y3lSaOWtIub5FpYWu3-gzGzoHsz',// your appId
-      appKey: 'vWbPABOU1T22NBboQgGNj6Qv', // your appKey
-    }
+      appId: "bbOLe8y3lSaOWtIub5FpYWu3-gzGzoHsz", // your appId
+      appKey: "vWbPABOU1T22NBboQgGNj6Qv", // your appKey
+    },
   },
 };
