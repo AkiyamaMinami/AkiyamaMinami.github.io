@@ -4,9 +4,10 @@ sidebar: 'auto'
 date: 2022-07-25
 categories:
  - FrontEnd
+ - JavaScript
 tags:
- - closure
- - javascript
+ - Closure
+ - Javascript
 ---
 
 ## 前言
