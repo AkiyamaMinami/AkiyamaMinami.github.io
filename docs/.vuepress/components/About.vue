@@ -5,7 +5,7 @@
         <div class="tip-item">哎？吸铁石睡觉？</div>
         <div class="tip-item">李在赣神魔？</div>
       </div>
-      <div>
+      <div class="dsm-img-container">
         <img
           class="dsm-img"
           src="https://s2.loli.net/2022/08/02/sKdIG7aU8uegpb6.jpg"
@@ -34,8 +34,10 @@ export default {};
 .tip-item {
   margin-bottom: 20px;
 }
-.dsm-img {
+.dsm-img-container {
   margin-top: 15px;
+}
+.dsm-img {
   width: 280px;
   height: 170px;
 }
