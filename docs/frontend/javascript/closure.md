@@ -7,7 +7,6 @@ categories:
  - JavaScript
 tags:
  - Closure
- - Javascript
 ---
 
 ## 前言

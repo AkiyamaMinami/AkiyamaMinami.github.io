@@ -6,7 +6,6 @@ categories:
  - FrontEnd
  - JavaScript
 tags:
- - Javascript
  - Prototype
 ---
 
