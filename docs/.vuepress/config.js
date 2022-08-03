@@ -28,7 +28,7 @@ module.exports = {
       },
       { 
         text: 'GitHub', 
-        link: 'https://github.com/AkiyamaMinami/akiyamaminami.github.io', 
+        link: 'https://github.com/AkiyamaMinami', 
         icon: 'reco-github' 
       },
     ],
@@ -39,6 +39,15 @@ module.exports = {
       appId: "bbOLe8y3lSaOWtIub5FpYWu3-gzGzoHsz", // your appId
       appKey: "vWbPABOU1T22NBboQgGNj6Qv", // your appKey
       placeholder: '李在赣神魔？',
+    },
+    // 博客设置
+    blogConfig: {
+      category: {
+        // 在导航栏菜单中所占的位置，默认2
+        // 默认 “分类”
+        location: 1, 
+        text: 'Category'
+      },
     },
   },
 };
