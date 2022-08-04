@@ -3,7 +3,6 @@ title: JavaScript -- 说说对闭包的理解？
 sidebar: 'auto'
 date: 2022-07-25
 categories:
- - FrontEnd
  - JavaScript
 tags:
  - Closure

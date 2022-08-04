@@ -3,7 +3,6 @@ title: JavaScript -- 原型、原型链的那些事儿~
 sidebar: 'auto'
 date: 2022-07-27
 categories:
- - FrontEnd
  - JavaScript
 tags:
  - Prototype
