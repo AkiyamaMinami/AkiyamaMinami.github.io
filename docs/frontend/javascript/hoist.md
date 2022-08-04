@@ -3,7 +3,7 @@ title: JavaScript -- 变量提升是在做啥子？
 sidebar: 'auto'
 date: 2022-08-03
 categories:
- - FrontEnd
+ - JavaScript
 tags:
  - Hoist
 ---
@@ -34,6 +34,9 @@ function logName() {
 
 ## 变量提升（Hoist）
 
+### 定义
+变量提升是指，JavaScript代码在执行的时候，JavaScript引擎会把**变量的声明、函数的声明**的这些代码，提升到整个代码的开头。当变量**被提升**，会给变量设置默认值**undefined**。
+
 ### JavaScript中的声明和赋值
 ```js
 var name = 'mobs'
@@ -63,3 +66,39 @@ test1 = function(){
   console.log('test1')
 }
 ```
+
+### JavaScript引擎如何处理相同函数名如何处理？
+**如果定义了两个相同名字的函数，生效的是最后一个定义的函数。**
+
+## 纵观JavaScript代码执行的流程
+“变量提升”是JavaScript代码执行过程中的一个行为，变量和函数的声明的代码看上去
+会被移动到代码的最前面。但是实际上变量、函数声明的**代码所在的位置并不会真的去改变**，仅仅是在**编译阶段**被JavaScript引擎放到了内存中。<br/>
+概括代码流程：
+> **代码 => 编译 => 执行**
+
+### 编译
+代码编译后产生：
+1. 执行上下文（Execution context）
+2. 可执行代码（字节码）<br/>
+
+执行上下文就是JavaScript代码运行的环境（抽象理解要记住），函数的调用就会产生一个执行上下文，代码执行就会进入执行上下文。它会包含的一些信息：
+* 变量对象 => **这个对象里面就保存着变量提升的内容**
+  ```js
+  变量对象: {
+    name: undefined,
+    test: function() { console.log('test') }
+  }
+  ```
+  **函数定义会被存储到堆（Heap）中，变量对象test属性会指向堆中的函数。**
+* 作用域链
+* this
+
+**对于声明以外的代码，JavaScript引擎会将其编译为字节码。**
+
+### 执行
+JavaScript引擎配合变量对象开始按照顺序执行可执行代码（字节码）。
+
+## 总结
+* JavaScript代码执行的时候，需要先进行编译，编译时会进行变量提升。
+* 编译阶段，变量、函数的声明会被保存到执行上下文的变量对象中。
+* 执行阶段，JavaScript会配合变量对象去执行代码。
