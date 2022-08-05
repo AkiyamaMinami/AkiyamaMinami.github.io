@@ -21,11 +21,11 @@ module.exports = {
     lastUpdated: 'Last Updated',
     // 首页导航栏
     nav: [
-      { 
-        text: 'FrontEnd', 
-        link: '/frontend/', 
-        icon: 'reco-document'
-      },
+      // { 
+      //   text: 'FrontEnd', 
+      //   link: '/frontend/', 
+      //   icon: 'reco-document'
+      // },
       { 
         text: 'About', 
         link: '/about/', 
@@ -49,24 +49,25 @@ module.exports = {
     blogConfig: {
       category: {
         // 在导航栏菜单中所占的位置，默认2
+        location: 1,
         // 默认 “分类”
         text: 'Category'
       },
     },
     // 锚点一直自动跳转到顶部，暂未解决
     sidebar: {
-      '/frontend/': [
-        {
-          title: 'JavaScript',
-          collapsable: true,
-          children: [
-            'javascript/hoist',
-            'javascript/closure',
-            'javascript/prototype',
-            'javascript/this',
-          ]
-        }
-      ]
+      // '/frontend/': [
+      //   {
+      //     title: 'JavaScript',
+      //     collapsable: true,
+      //     children: [
+      //       'javascript/hoist',
+      //       'javascript/closure',
+      //       'javascript/prototype',
+      //       'javascript/this',
+      //     ]
+      //   }
+      // ]
     },
   },
 };
