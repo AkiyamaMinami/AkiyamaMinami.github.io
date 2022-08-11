@@ -1,0 +1,24 @@
+远离npm🙏🙏🙏
+================================================================
+项目搭建问题记录：
+1. pnpm升级依赖后不会更新package.json文件
+环境:
+pnpm version 7.2.1
+node version 16.14.0
+macos
+执行: pnpm update foo@x.x.x
+https://github.com/pnpm/pnpm/issues/1657
+
+2. pnpm install报错: ERR_PNPM_UNEXPECTED_PKG_CONTENT_IN_STORE
+the lockfile is broken! a full installation will be performed in an attempt to fix it
+https://github.com/pnpm/pnpm/issues/4628
+
+3. vuepress-theme-reco 1.6.14
+当左、右侧边栏的同时存在的情况下,右边侧边栏fixed无效导致与页面一起滚动,且如果滚轮下拉的话，会自动回到顶部。
+解决方案：
+在.vuepress\styles下新建一个index.styl文件,加入
+.page{
+  overflow-x: hidden
+  margin-left $sidebarWidth
+  transform: none !important
+}

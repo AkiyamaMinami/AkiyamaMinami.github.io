@@ -1,5 +1,5 @@
 ---
-title: JavaScript -- 原型、原型链那些事儿~
+title: JavaScript -- 原型、原型链
 sidebar: 'auto'
 date: 2022-07-27
 categories:

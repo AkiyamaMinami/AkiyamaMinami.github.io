@@ -1,5 +1,5 @@
 ---
-title: JavaScript -- 变量提升是在做啥子？
+title: JavaScript -- 变量提升
 sidebar: 'auto'
 date: 2022-08-03
 categories:

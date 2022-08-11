@@ -1,5 +1,5 @@
 ---
-title: JavaScript -- 说说对闭包的理解？
+title: JavaScript -- 闭包
 sidebar: 'auto'
 date: 2022-07-25
 categories:
