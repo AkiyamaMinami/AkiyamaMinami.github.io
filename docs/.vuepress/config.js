@@ -62,6 +62,7 @@ module.exports = {
           children: [
             'javascript/hoist',
             'javascript/execution-context',
+            'javascript/call-stack',
             'javascript/closure',
             'javascript/prototype',
             'javascript/this',
