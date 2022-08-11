@@ -1,6 +1,11 @@
 <template>
   <div class="about-container">
-    <div class="dsm-container">
+    <!-- <div>
+      <div>🚶‍♂️🚶‍♂️🚶‍♂️</div>
+      <div>你好呀，小怪~</div>
+      <div>炒饭真好吃~</div>
+    </div> -->
+    <div v-show="dsmVisible" class="dsm-container">
       <div class="tip-container">
         <div class="tip-item">哎？吸铁石睡觉？</div>
         <div class="tip-item">李在赣神魔？</div>
@@ -16,7 +21,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      dsmVisible: true,
+    }
+  }
+};
 </script>
 <style>
 @import url("https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap");

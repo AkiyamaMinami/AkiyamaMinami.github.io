@@ -63,9 +63,9 @@ module.exports = {
             'javascript/hoist',
             'javascript/execution-context',
             'javascript/call-stack',
+            'javascript/this',
             'javascript/closure',
             'javascript/prototype',
-            'javascript/this',
           ]
         }
       ]
