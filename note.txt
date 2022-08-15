@@ -1,4 +1,4 @@
-远离npm🙏🙏🙏
+远离npm、pnpm 🙏🙏🙏
 ================================================================
 项目搭建问题记录：
 1. pnpm升级依赖后不会更新package.json文件
@@ -22,3 +22,5 @@ https://github.com/pnpm/pnpm/issues/4628
   margin-left $sidebarWidth
   transform: none !important
 }
+
+4. 抛弃pnpm，使用yarn成功将vuepress-theme-reco@1.6.14依赖升级vuepress-theme-reco@1.6.6
