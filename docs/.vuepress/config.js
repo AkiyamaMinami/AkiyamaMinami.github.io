@@ -61,6 +61,7 @@ module.exports = {
           collapsable: true,
           children: [
             'javascript/hoist',
+            'javascript/block-scope',
             'javascript/execution-context',
             'javascript/call-stack',
             'javascript/this',
