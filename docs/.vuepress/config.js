@@ -68,7 +68,14 @@ module.exports = {
             'javascript/closure',
             'javascript/prototype',
           ]
-        }
+        },
+        // {
+        //   title: 'Browser',
+        //   collapsable: true,
+        //   children: [
+        //     'browser/v8-run-js',
+        //   ]
+        // },
       ]
     },
   },
