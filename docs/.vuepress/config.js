@@ -67,6 +67,7 @@ module.exports = {
             'javascript/this',
             'javascript/closure',
             'javascript/prototype',
+            'javascript/debounce-throttle',
           ]
         },
         // {
