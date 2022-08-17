@@ -70,14 +70,15 @@ module.exports = {
             'javascript/debounce-throttle',
           ]
         },
-        // {
-        //   title: 'Browser',
-        //   collapsable: true,
-        //   children: [
-        //     'browser/v8-run-js',
-        //   ]
-        // },
-      ]
+        {
+          title: 'Browser',
+          collapsable: true,
+          children: [
+            'browser/v8-run-js',
+            'browser/chrome-thread-process'
+          ]
+        },
+      ],
     },
   },
   markdown: {
