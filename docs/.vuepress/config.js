@@ -41,8 +41,10 @@ module.exports = {
     modePicker: false,
     // valine
     valineConfig: {
-      appId: "bbOLe8y3lSaOWtIub5FpYWu3-gzGzoHsz", // your appId
-      appKey: "vWbPABOU1T22NBboQgGNj6Qv", // your appKey
+      // your appId
+      appId: "bbOLe8y3lSaOWtIub5FpYWu3-gzGzoHsz",
+      // your appKey
+      appKey: "vWbPABOU1T22NBboQgGNj6Qv",
       placeholder: '李在赣神魔？',
     },
     // 博客设置
@@ -58,7 +60,7 @@ module.exports = {
       '/frontend/': [
         {
           title: 'JavaScript',
-          collapsable: true,
+          collapsable: false,
           children: [
             'javascript/hoist',
             'javascript/block-scope',
@@ -72,10 +74,10 @@ module.exports = {
         },
         {
           title: 'Browser',
-          collapsable: true,
+          collapsable: false,
           children: [
+            'browser/chrome-thread-process',
             'browser/v8-run-js',
-            'browser/chrome-thread-process'
           ]
         },
       ],
