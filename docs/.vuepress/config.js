@@ -12,6 +12,11 @@ module.exports = {
       },
     ],
   ],
+  plugins: {
+    'sitemap': {
+      hostname: 'https://mobs.fun'
+    },
+  },
   // 主题配置
   themeConfig: {
     type: "blog",
