@@ -25,3 +25,8 @@ https://github.com/pnpm/pnpm/issues/4628
 
 4. 抛弃pnpm，使用yarn成功将vuepress-theme-reco@1.6.14依赖升级vuepress-theme-reco@1.6.6
 主题升级之后仍然无法解决双侧边栏的问题，后来发现单纯因为侧边栏只有一个子菜单的时候会出现无法折叠的问题
+
+================================================================
+Blog相关：
+1. Vuepress站点收录：https://github.com/mqyqingfeng/Blog/issues/272
+已经操作了Google收录
