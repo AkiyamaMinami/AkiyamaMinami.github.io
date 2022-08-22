@@ -30,3 +30,7 @@ https://github.com/pnpm/pnpm/issues/4628
 Blog相关：
 1. Vuepress站点收录：https://github.com/mqyqingfeng/Blog/issues/272
 已经操作了Google收录
+
+2. github pages站点在美国，国内访问延迟150ms以上，需要翻墙访问会更快。
+解决方案迁移到国内服务器，gitee，要实名认证，停止操作。
+================================================================
