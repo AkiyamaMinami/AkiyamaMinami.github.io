@@ -81,9 +81,10 @@ module.exports = {
           title: 'Browser',
           collapsable: false,
           children: [
+            'browser/v8-run-js',
             'browser/chrome-thread-process',
             'browser/what-happen-input-url',
-            'browser/v8-run-js',
+            'browser/queue-event-loop',
           ]
         },
       ],
