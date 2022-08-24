@@ -32,14 +32,14 @@ module.exports = {
         icon: 'reco-document'
       },
       { 
-        text: 'About', 
-        link: '/about/', 
-        icon: 'reco-account'
-      },
-      { 
         text: 'GitHub', 
         link: 'https://github.com/AkiyamaMinami', 
         icon: 'reco-github' 
+      },
+      { 
+        text: 'Home', 
+        link: '/about/', 
+        icon: 'reco-blog'
       },
     ],
     // 不显示模式调节按钮
@@ -74,6 +74,7 @@ module.exports = {
             'javascript/this',
             'javascript/closure',
             'javascript/prototype',
+            'javascript/setTimeout',
             'javascript/debounce-throttle',
           ]
         },
@@ -85,6 +86,7 @@ module.exports = {
             'browser/chrome-thread-process',
             'browser/what-happen-input-url',
             'browser/queue-event-loop',
+            'browser/macro-micro-task',
           ]
         },
       ],
