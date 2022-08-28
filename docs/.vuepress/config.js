@@ -83,11 +83,12 @@ module.exports = {
           title: 'Browser',
           collapsable: false,
           children: [
-            'browser/v8-run-js',
             'browser/chrome-thread-process',
             'browser/what-happen-input-url',
+            'browser/render-process',
             'browser/queue-event-loop',
             'browser/macro-micro-task',
+            'browser/v8-run-js',
           ]
         },
       ],
