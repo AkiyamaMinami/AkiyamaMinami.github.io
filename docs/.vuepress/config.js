@@ -91,6 +91,13 @@ module.exports = {
             'browser/v8-run-js',
           ]
         },
+        {
+          title: 'Network',
+          collapsable: false,
+          children: [
+            'network/browser-tcp',
+          ]
+        },
       ],
     },
   },
