@@ -96,6 +96,7 @@ module.exports = {
           collapsable: false,
           children: [
             'network/browser-tcp',
+            'network/browser-http',
           ]
         },
       ],
