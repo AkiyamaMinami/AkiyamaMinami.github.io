@@ -99,6 +99,13 @@ module.exports = {
             'network/browser-http',
           ]
         },
+        {
+          title: 'Vue2',
+          collapsable: false,
+          children: [
+            'vue2/obj_add_attrs'
+          ]
+        },
       ],
     },
   },
