@@ -1,5 +1,5 @@
 ---
-title: Case -- 防抖、节流
+title: 防抖、节流
 categories:
  - JavaScript
 tags:

@@ -1,5 +1,5 @@
 ---
-title: Web API -- XMLHttpRequest
+title: XMLHttpRequest
 categories:
  - JavaScript
 tags:

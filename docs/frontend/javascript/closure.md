@@ -1,5 +1,5 @@
 ---
-title: JavaScript -- 闭包
+title: 闭包
 sidebar: 'auto'
 date: 2022-07-25
 categories:

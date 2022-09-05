@@ -1,5 +1,5 @@
 ---
-title: JavaScript -- this
+title: this
 sidebar: 'auto'
 date: 2022-08-01
 categories:

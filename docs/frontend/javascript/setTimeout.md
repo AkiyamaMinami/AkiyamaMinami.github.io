@@ -1,5 +1,5 @@
 ---
-title: Web API -- setTimeout
+title: setTimeout
 categories:
  - JavaScript
 tags:

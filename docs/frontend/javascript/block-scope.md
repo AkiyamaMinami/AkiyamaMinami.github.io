@@ -1,5 +1,5 @@
 ---
-title: JavaScript -- 块级作用域
+title: 块级作用域
 sidebar: 'auto'
 date: 2022-08-12
 categories:
