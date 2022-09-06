@@ -76,6 +76,7 @@ module.exports = {
             'javascript/prototype',
             'javascript/setTimeout',
             'javascript/XMLHttpRequest',
+            'javascript/promise',
             'javascript/debounce-throttle',
           ]
         },
