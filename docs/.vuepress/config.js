@@ -77,6 +77,7 @@ module.exports = {
             'javascript/setTimeout',
             'javascript/XMLHttpRequest',
             'javascript/promise',
+            'javascript/async-await',
             'javascript/debounce-throttle',
           ]
         },
