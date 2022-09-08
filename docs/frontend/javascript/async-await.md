@@ -112,4 +112,13 @@ getGenPromise(gen).then((response) => {
 async/await技术背后的秘密就是Promise和生成器应用，往低层说就是微任务和协程应用。
 ### async
 MDN定义：async是一个异步执行并隐式返回Promise作为结果的函数。
+```js
+async function foo() {
+    return 2
+}
+// 隐式返回 => Promise {<resolved>: 2}
+console.log(foo())
+```
+### await
+
 ## 总结
