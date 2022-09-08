@@ -84,6 +84,8 @@ genDemo生成器函数不是一次执行完毕的，全局代码和genDemo函数
 ```js
 // 同步代码形式发送异步请求
 function* foo() {
+    // 调用fetch创建了一个Promise对象response1
+    // 通过yield暂停协程的执行，并将response1返回给父协程
     let response1 = yield fetch('https://mobs.fun')
     let response2 = yield fetch('https://mobs.fun/1')
 }
@@ -94,11 +96,20 @@ function getGenPromise(gen) {
     // 父协程中执行gen.next把主线程的控制权交给gen协程
     return gen.next().value
 }
+// 父协程恢复执行后调用response1.then方法等待请求结果
 getGenPromise(gen).then((response) => {
+    // fetch发起的请求完成，then中的回调函数拿到结果
     console.log(response)
+    // 调用gen.next放弃主线程的控制权，将控制权交gen协程继续执行下个请求
     return getGenPromise(gen)
 }).then((response) => {
     console.log(response)
 })
 ```
+
+## async/await
+生成器已经能很好地满足需求了，ES7中引入了async/await，这种方式能够生成器，实现更加直观简洁的代码。<br/>
+async/await技术背后的秘密就是Promise和生成器应用，往低层说就是微任务和协程应用。
+### async
+MDN定义：async是一个异步执行并隐式返回Promise作为结果的函数。
 ## 总结
