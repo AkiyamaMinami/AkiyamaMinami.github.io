@@ -108,6 +108,14 @@ module.exports = {
             'vue2/obj_add_attrs'
           ]
         },
+        {
+          title: 'Algorithm && DataStructure',
+          collapsable: false,
+          children: [
+            'algorithm/leetcode/001',
+            'algorithm/leetcode/020'
+          ]
+        },
       ],
     },
   },
