@@ -114,7 +114,8 @@ module.exports = {
           collapsable: false,
           children: [
             'algorithm/leetcode/001',
-            'algorithm/leetcode/020'
+            'algorithm/leetcode/020',
+            'algorithm/leetcode/pointoffer-024'
           ]
         },
       ],
