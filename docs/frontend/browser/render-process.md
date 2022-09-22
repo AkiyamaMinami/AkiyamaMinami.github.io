@@ -2,10 +2,6 @@
 title: 渲染阶段HTML、CSS、JavaScript是如何构建页面的？
 categories:
  - Browser
-# tags:
-#  - DOM生成
-#  - 样式计算
-#  - 布局
 date: 2022-08-28
 sidebar: 'auto'
 ---
@@ -34,11 +30,10 @@ sidebar: 'auto'
 ![渲染引擎流程](https://s2.loli.net/2022/08/30/Pl2IM4jut67ocsf.png)
 ## DOM树构建
 为何需要构建DOM树？<br/>
-**浏览器无法直接理解使用HTML文件，**所以需要将HTML转换成浏览器能理解的**DOM树结构**。<br/>
-**输入HTML文件 => HTML解析器解析 => 输出DOM树**<br/>
-document就是DOM结构，内容和HTML文件内容基本一致，但是DOM保存在内存中的树结构中，支持JavaScript查询或修改。
+**浏览器无法直接理解使用HTML文件**，所以需要将HTML转换成浏览器能理解的**DOM树结构**。<br/>
+构建流程：输入HTML文件 => **HTML解析器解析** => 输出DOM树。<br/>
+document对象就是DOM树的根节点，DOM和HTML内容基本一致，但DOM保存在**内存中的树状结构**，支持JavaScript查询或修改，[JavaScript如何影响DOM树构建？](./render-process-dom-tree.md)<br/>
 ![DOM树结构](https://s2.loli.net/2022/08/29/2zFWdlMtaoIuU1S.png)
-
 ## 样式计算
 CSS样式来源：
 * link引入的外部CSS文件

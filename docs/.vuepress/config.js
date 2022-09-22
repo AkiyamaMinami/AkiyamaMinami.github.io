@@ -89,6 +89,7 @@ module.exports = {
             'browser/chrome-thread-process',
             'browser/what-happen-input-url',
             'browser/render-process',
+            'browser/render-process-dom-tree',
             'browser/queue-event-loop',
             'browser/macro-micro-task',
             'browser/v8-run-js',
