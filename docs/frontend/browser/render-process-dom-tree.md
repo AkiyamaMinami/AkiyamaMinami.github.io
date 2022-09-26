@@ -31,6 +31,9 @@ HTML解析器不是等整个文档加载完成之后再去解析，而是**网�
 V8引擎编译JavaScript过程中的第一步就是做词法分析，将JavaScript分解为一个个Token。解析HTML也是如此，需要**通过分词器先将字节流转换为一个个Token**：
 * Tag Token（StartTag or EndTag） => startTag-html、endTag-html
 * 文本 Token => content
+::: tip
+渲染引擎有一个安全检查模块XSSAuditor，用于检测词法安全。在分词器解析出Token之后，会检测这些模块是否安全，比如是否引用了外部脚本，是否符合CSP规范，是否存在跨站点请求等。如果出现不符合规范的内容，XSSAuditor会拦截该脚本或下载任务进行。
+:::
 
 ### 2.将Token解析为DOM节点 3.将DOM节点添加到DOM树中
 这两步是同步进行的。HTML解析器维护了一个**Token栈**结构，Token栈主要用来**计算节点之间的父子关系**，在上一步中生成的Token，会按照顺序压到这个栈中。<br/>
@@ -49,10 +52,35 @@ V8引擎编译JavaScript过程中的第一步就是做词法分析，将JavaScri
     <div>content</div>
     <script>
       let d1 = document.getElementsByTagName('div')[0]
+      // 需要依赖DOM
       d1.innerText = 'js-content'
     </script>
     <div>test</div>
 </body>
 </html>
 ```
+HTML解析器遇到script标签会暂停DOM的解析，因为JavaScript有可能修改当前已经生成的DOM结构。然后JavaScript引擎介入，执行script标签中的脚本，修改了DOM中第一个div的内容，脚本执行完毕，HTML解析器恢复执行解析过程，继续解析后续内容，直至生成最终DOM树。
+### 暂停DOM解析，下载执行JavaScript代码
+一般情况，我们引入的这段JavaScript代码需要先**下载**，下载的过程会阻塞DOM解析，而且下载一般都是很耗时的（网络环境、JavaScript文件大小）。<br/>
+### 优化阻塞DOM解析的策略
+1. Chrome浏览器的优化：**预解析操作。**当渲染引擎接收到字节流，会开启一个**预解析线程**，专门用于分析HTML文件中包含的JavaScript、CSS等相关的文件，一旦解析到这些文件，预解析线程会提前下载这些文件。
+2. CDN加速JavaScript文件下载。
+3. 压缩JavaScript文件体积。
+4. 如果JavaScript文件中并没有操作DOM的代码，可以将其设置为**异步加载**。 **async、defer**进行标记。
+   ```js
+    // async标志的脚本文件一旦加载完成，会立即执行
+    <script async type="text/javascript" src='test.js'></script>
+    // defer标记的脚本文件，需要在DOMContentLoaded事件之前执行。
+    <script defer type="text/javascript" src='test.js'></script>
+   ```
+## CSS同样也阻塞了HTML解析过程
+```js
+// 是依赖CSSOM的
+div.style.color = 'red'
+```
+这是用于操纵CSSOM的，所以在执行JavaScript之前，需要解析**JavaScript语句中所有的CSS样式**。如果代码中引用了外部CSS文件，那么在执行JavaScript之前，**还需等待外部CSS文件下载完成并且解析生成CSSOM对象之后，才能执行JavaScript脚本**。<br/>
+JavaScript引擎在解析JavaScript之前，无法知道JavaScript是否操作了CSSOM，所以渲染引擎在遇到JavaScript脚本之前，不管脚本是否操作了CSSOM，都会执行CSS文件下载、解析的操作，再执行JavaScript脚本。<br/>
+所以：**JavaScript脚本是依赖样式表的。** => 这又是一个阻塞过程
 ## 总结
+* HTML字节流 => 分词器生成Token（栈维护） => Token解析为DOM节点 => DOM节点添加到DOM树
+* JavaScript阻塞DOM生成，CSS样式文件又阻塞JavaScript的执行。（需要关注JavaScript文件和样式表文件，影响页面性能）
