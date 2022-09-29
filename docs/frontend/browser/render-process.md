@@ -1,7 +1,9 @@
 ---
-title: 渲染阶段HTML、CSS、JavaScript是如何构建页面的？
+title: HTML、CSS、JavaScript如何渲染页面的？
 categories:
  - Browser
+tags:
+ - 渲染流程
 date: 2022-08-28
 sidebar: 'auto'
 ---
