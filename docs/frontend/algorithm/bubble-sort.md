@@ -1,7 +1,7 @@
 ---
 title: 冒泡排序
 categories:
- - sort
+ - Algorithm
 tags:
  - bubble sort
 date: 2022-09-27

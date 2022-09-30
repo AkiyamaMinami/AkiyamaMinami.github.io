@@ -1,7 +1,7 @@
 ---
 title: 浏览器发起HTTP请求流程？
 categories:
- - Browser
+ - Network
 tags:
  - http
 date: 2022-09-01

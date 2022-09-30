@@ -4,6 +4,8 @@ categories:
  - Browser
 tags:
  - 渲染流程
+ - 重排
+ - 重绘
 date: 2022-08-28
 sidebar: 'auto'
 ---
