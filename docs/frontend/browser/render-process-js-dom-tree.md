@@ -2,6 +2,8 @@
 title: JavaScript如何影响DOM树构建？
 categories:
  - Browser
+tags:
+ - 阻塞DOM解析
 date: 2022-09-22
 sidebar: 'auto'
 ---

@@ -71,6 +71,7 @@ module.exports = {
             'javascript/block-scope',
             'javascript/execution-context',
             'javascript/call-stack',
+            'javascript/stack-heap-store',
             'javascript/this',
             'javascript/closure',
             'javascript/prototype',
