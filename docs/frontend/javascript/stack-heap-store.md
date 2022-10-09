@@ -1,10 +1,14 @@
 ---
-title: 数据存储 -- 栈堆
+title: 堆栈数据存储
 categories:
  - JavaScript
 tags:
  - 数据类型
  - 内存空间
+ - 闭包
+ - 堆栈
+ - stack
+ - heap
 date: 2022-09-30
 sidebar: 'auto'
 ---
