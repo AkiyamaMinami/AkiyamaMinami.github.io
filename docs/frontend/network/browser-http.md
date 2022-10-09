@@ -1,5 +1,5 @@
 ---
-title: 浏览器发起HTTP请求流程？
+title: 浏览器发起HTTP请求的流程？
 categories:
  - Network
 tags:
