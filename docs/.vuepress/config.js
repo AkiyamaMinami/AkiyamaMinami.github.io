@@ -92,6 +92,7 @@ module.exports = {
             'browser/render-process',
             'browser/render-process-js-dom-tree',
             'browser/render-process-css',
+            'browser/virtual-dom',
             'browser/queue-event-loop',
             'browser/macro-micro-task',
             'browser/v8-run-js',
