@@ -7,6 +7,7 @@ categories:
 tags:
  - 编译器
  - 解析器
+ - AST
 ---
 
 ## 前言
@@ -15,9 +16,20 @@ tags:
 * 负责去解析执行JavaScript代码。
 
 JavaScript自身是轻量级**解释型语言**。从技术层面看，现代浏览器引擎都采用了**即时编译**（Just-In-Time Compiling）技术让源码执行的更快。<br/>
-机器无法直接理解我们所写的代码，所以执行代码之前，需要先把代码”**翻译（编译器、解释器）**“成机器能理解的机器语言。一般可以把语言分为两类：**编译型、解释型**。上面说的**即时编译**，意思是编译 + 解释的结合体。<br/>
-[MDN - JavaScript](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/What_is_JavaScript)
-> 一切都是为了执行效率
+机器无法直接理解我们所写的代码，所以执行代码之前，需要先把代码”**翻译（编译器、解释器）**“成机器能理解的机器语言。一般可以把语言分为两类：**编译型、解释型**。上面说的**即时编译**，意思是编译 + 解释的结合体。[MDN - JavaScript](https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/First_steps/What_is_JavaScript)
+:::tip
+一切都是为了执行效率
+:::
+### 为何采用先编译后解释执行的方案呢？
+JavaScript每次执行都要去先编译再去执行，为什么不能像Java一样，一次编译成可执行文件，“随处”运行呢？这样不就不用每次执行都要走一遍编译流程了嘛？<br/>
+问题点：
+* 无法统一客户用的浏览器版本（Java执行文件我们是可以指定运行环境和版本的）。
+* ECMAScript本身规范也不断的更新（JavaScript这种语言面对文本展示的场景，更新频率比Java快）。
+* 各家浏览器厂商对于JavaScript语言特性支持度不统一。
+
+面对这些情况下，如果让JavaScript编译成“可执行”文件，很有可能出现某些浏览器运行不了，某些语言特性失效。所以让JavaScript编译成可执行文件这种提案目前来说比较难推进。
+[二进制AST提案](https://github.com/tc39/proposal-binary-ast)
+
 ## 编译器、解释器
 
 ### 编译型语言执行流程
