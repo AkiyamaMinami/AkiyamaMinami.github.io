@@ -74,4 +74,32 @@ Web Components给出了一套解决方案，它提供了**对局部视图封装�
     </body>
 </html>
 ```
+使用Web Components一般的三个步骤：
+1. 使用template标签来创建模板，template元素是不会被渲染到页面上的（**DOM树中的template节点不会出现在布局树中**）。但是可以利用DOM查找template的内容。一般使用template来自定义一些基础的元素结构（就变得可复用了）。template定义好之后，可以在template的内部定义样式信息。
+2. 创建一个自定义组件的Shadow DOM的类。在类的构造函数中要完成三件事：
+   * 查找template内容；
+   * 创建Shadow DOM；
+   * 将template添加到Shadow DOM上；
+3. 使用customElements.define来自定义元素。
+### Shadow DOM
+Shadow DOM的作用是**将template中的内容与全局DOM、CSS进行隔离**，实现元素和样式的私有化封装。
+:::tip
+可以把Shadow DOM看成是一个作用域，其内部的样式和元素不会影响到全局的样式和元素的，而在全局环境下，要访问Shadow DOM内部的样式或者元素也是需要通过约定好的接口。
+:::
+注意：通过Shadow DOM可以隔离DOM、CSS，但是Shadow DOM的JavaScript脚本是不会被隔离的，比如在Shadow DOM定义的JavaScript函数依然可以被外部访问，因为 JavaScript语言本身已经可以很好地实现组件化了。
+
+### 浏览器如何实现Shadow DOM
+Shadow DOM的作用：
+* Shadow DOM中的元素对于整个网页是不可见的；
+* Shadow DOM的CSS不会影响到整个网页的CSSOM，Shadow DOM内部的CSS只对内部的元素起作用。
+
+每个Shadow DOM都有一个shadow root的根节点，所以**每个Shadow DOM都可以看成是一个独立的DOM**，有自己的样式、自己的属性，内部样式不会影响到外部样式，外部样式也不会影响到内部样式。<br/>
+浏览器为了实现影子DOM的特性，在代码内部做了条件判断，当通过DOM接口去查找元素时，渲染引擎会去判断该标签属性下的shadow-root元素是否为Shadow DOM，如果是Shadow DOM，那么直接跳过shadow-root元素的查询操作，这样通过DOM API就无法直接查询到Shadow DOM的内部元素了。当生成布局树的时候，渲染引擎也会判断当前标签属性下面的shadow-root元素是否是Shadow DOM，如果是那么在Shadow DOM内部元素的节点选择CSS样式的时候，会直接使用Shadow DOM内部的CSS属性。最终渲染的效果就是Shadow DOM内部定义的样式。
+
+![Shadow Dom](https://s2.loli.net/2022/10/13/mr6RYBCi9JNhAvg.jpg)
+
 ## 总结
+* 组件化：高内聚、低耦合。
+* DOM、CSSOM是全局的，阻碍了前端组件化。
+* Web Components方案 => Custom elements + Shadow DOM + HTML template。
+* Web Components实现了DOM、CSS的隔离。
