@@ -18,6 +18,31 @@ tags:
 1. **全局执行上下文**
 2. **函数执行上下文**
 3. ~~eval执行上下文~~（也没咋用过，暂未了解(⊙o⊙)…）
+:::tip
+当前执行上下文的一个属性，非严格模式下总是个对象，严格模式下是any。
+:::
+[MDN - this](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/this)
+### 为什么要有this？
+:::tip
+优雅、准确的指向当前代码运行时所处的上下文。
+:::
+#### 优雅
+```js
+let longlonglonglonglonglongVariableName = {
+    name: "mobs",
+    func1() {
+      return longlonglonglonglonglongVariableName.name;
+    },
+    func2() {
+      // 即使对象名字修改了，func2内部代码依旧不用改。
+      return this.name;
+    }
+}
+console.log(longlonglonglonglonglongVariableName.func1());
+console.log(longlonglonglonglonglongVariableName.func2());
+```
+#### 准确
+this属性储存着调用该函数的对象的值。
 
 ## 全局执行上下文中的this
 * this指向 => 非严格模式 ? window对象 : undefined

@@ -1,4 +1,4 @@
----
+<!-- ---
 title: ViewModel -- 双向绑定的流程
 categories:
  - Vue2
@@ -11,4 +11,4 @@ sidebar: 'auto'
 
 ## 前言
 
-## 总结
+## 总结 -->

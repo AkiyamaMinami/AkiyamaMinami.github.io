@@ -73,6 +73,7 @@ module.exports = {
             'javascript/call-stack',
             'javascript/stack-heap-store',
             'javascript/this',
+            // 'javascript/bind-call-apply',
             'javascript/closure',
             'javascript/prototype',
             'javascript/setTimeout',
@@ -112,7 +113,7 @@ module.exports = {
           title: 'Vue2',
           collapsable: false,
           children: [
-            'vue2/two-way-data-binding',
+            // 'vue2/two-way-data-binding',
             'vue2/obj_add_attrs'
           ]
         },
