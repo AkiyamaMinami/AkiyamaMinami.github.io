@@ -99,6 +99,40 @@ call/apply和bind的区别：
 * 返回值：call/apply返回函数的执行结果；
  bind返回func的拷贝，并指定了func的this指向，保存了func的参数。
 
+## 实现
+
+### myBind
+* 修改this指向
+* 动态传递参数
+```js
+// 只在bind中传参数
+fn.bind(obj,1,2)()
+// 在bind中传递函数参数，同时也在返回的函数中传参数
+fn.bind(obj,1)(2)
+```
+* 兼容new关键字 => bind返回的函数作为构造函数的时候，bind时指定的this值会失效，但传入的参数依然生效
+```js
+Function.prototype.myBind = function (context) {
+    // 判断调用的对象是否为函数
+    if (typeof this !== "function") {
+        throw new TypeError("Error");
+    }
+    // 保存当前函数执行上下文
+    var self = this;
+    // 获取第二个及之后的参数
+    var args = Array.prototype.slice.call(arguments, 1);
+
+    return function Fn() {
+        return fn.apply(
+          this instanceof Fn 
+          ? new fn(...arguments)  // bind返回的新函数作为构造函数，原先的this失效
+          //指定的this绑定对象、保证多次传入参数
+          : context , args.concat(...arguments)
+        ); 
+    }
+}
+```
+
 ## 总结
 * 三者都是改变函数的this对象指向。
 * 三者传入的第一个参数都是this要指向的对象，如果没有这个参数或参数为undefined或null，则this默认指向全局window。
