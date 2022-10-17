@@ -9,24 +9,22 @@ tags:
 ---
 
 ## 前言
-> 记得在面向对象的语言中，this指向当前对象实例。<br/>
-但在JavaScript中，this关键字比较灵活（皮），不同的执行环境指向的值是不一样的，难受~
+在面向对象的语言中，this指向当前对象实例。<br/>
+在JavaScript中，this关键字比较灵活，在不同的执行环境下指向的值是不一样的。
 
 ## this是什么？
-要明确的一点 => **this**和**执行上下文**是绑定的，**执行上下文创建**的时候会确定this的指向。<br/>
-执行上下文有三类：
-1. **全局执行上下文**
-2. **函数执行上下文**
-3. ~~eval执行上下文~~（也没咋用过，暂未了解(⊙o⊙)…）
+this是函数被执行时产生的一个绑定，指向的值取决于**函数被调用的方式**。
+1. 当前执行上下文的一个属性。
+2. 作为函数执行，this的值 => 非严格模式下总是个对象、严格模式下undefined。
+3. 作为对象的方法执行，this值指向该对象。
 :::tip
-当前执行上下文的一个属性，非严格模式下总是个对象，严格模式下是any。
+**this**是**执行上下文**的一个属性，**执行上下文创建**的时候会确定this的指向。
 :::
-[MDN - this](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/this)
 ### 为什么要有this？
 :::tip
 优雅、准确的指向当前代码运行时所处的上下文。
 :::
-#### 优雅
+**优雅**：
 ```js
 let longlonglonglonglonglongVariableName = {
     name: "mobs",
@@ -41,8 +39,13 @@ let longlonglonglonglonglongVariableName = {
 console.log(longlonglonglonglonglongVariableName.func1());
 console.log(longlonglonglonglonglongVariableName.func2());
 ```
-#### 准确
-this属性储存着调用该函数的对象的值。
+**准确**：this的出现为了实现准确地指向（某个对象）而不会产生歧义。JavaScript万物皆对象，所以函数也有属性，函数执行阶段（即执行上下文）会确定this属性的值，此时this就是一个变量，储存着调用该函数的对象的值。
+### 三类执行上下文
+1. **全局执行上下文**
+2. **函数执行上下文**
+3. ~~eval执行上下文~~（也没咋用过，暂未了解(⊙o⊙)…）
+
+[MDN - this](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/this)
 
 ## 全局执行上下文中的this
 * this指向 => 非严格模式 ? window对象 : undefined
