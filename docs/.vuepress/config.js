@@ -80,6 +80,7 @@ module.exports = {
             'javascript/XMLHttpRequest',
             'javascript/promise',
             'javascript/async-await',
+            'javascript/local-cache',
             'javascript/shallow-deep-copy',
             'javascript/debounce-throttle',
           ]
