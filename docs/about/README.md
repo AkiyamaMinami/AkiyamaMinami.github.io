@@ -5,6 +5,18 @@ publish: false
 ---
 <About />
 
+## mua~~~~~~~~~~~
+<iframe 
+  src="//player.bilibili.com/player.html?aid=473440998&bvid=BV1eT411N7Wy&cid=844930492&page=1" 
+  scrolling="no"
+  border="0" 
+  frameborder="no" 
+  framespacing="0" 
+  allowfullscreen="true"
+  width="380px"
+  height="260px"
+/>
+
 <!-- 2022-10-07 -->
 ## 🚝
 吃不惯海鲜，去青岛真是折磨~~
