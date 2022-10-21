@@ -1,7 +1,7 @@
 ---
 title: 浏览器为何限制跨域访问？
 categories:
- - Network
+ - Browser
 tags:
  - 浏览器安全
  - 跨域

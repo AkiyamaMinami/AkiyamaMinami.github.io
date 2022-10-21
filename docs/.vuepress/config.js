@@ -100,6 +100,7 @@ module.exports = {
             'browser/macro-micro-task',
             'browser/v8-run-js',
             'browser/same-origin-policy',
+            'browser/xss-attack',
           ]
         },
         {
