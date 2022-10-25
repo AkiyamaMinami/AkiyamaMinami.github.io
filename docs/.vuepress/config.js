@@ -117,7 +117,8 @@ module.exports = {
           collapsable: false,
           children: [
             'vue2/two-way-data-binding',
-            'vue2/obj_add_attrs'
+            'vue2/obj_add_attrs',
+            'vue2/computed-watch'
           ]
         },
         {
