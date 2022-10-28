@@ -131,6 +131,13 @@ module.exports = {
             'algorithm/bubble-sort'
           ]
         },
+        {
+          title: 'Webpack',
+          collapsable: false,
+          children: [
+            'webpack/loader-plugin',
+          ]
+        }
       ],
     },
   },

@@ -21,7 +21,7 @@ Loader负责：
 2. 在import、加载模块时进行预处理文件。
 
 ### 配置Loader
-Webpack遇到不识别的模块，会再配置种查找当前模块文件的解析规则。<br/>、
+Webpack遇到不识别的模块，会在配置中查找当前模块文件的解析规则。
 1. 推荐：在webpack.config.js文件中指定loader。
 2. 内联在每个import语句中显式指定loader。
 3. CLI在shell命令中指定loader。
@@ -91,7 +91,6 @@ module.exports = {
 * after-emit => 在将内存中assets内容写到磁盘文件夹之后
 * done => 编译完成
 * failed => 编译失败
-* 
 ## 总结
 Loader、Plugin运行时机上的区别：
 * Loader运行在打包文件之前 => 实质是一个转换器，将A文件进行编译形成B文件，操作的是文件，比如A.scss、A.less convert => B.css。
