@@ -15,7 +15,7 @@ sidebar: 'auto'
 ![webpack生命周期.png](https://s2.loli.net/2022/10/27/UHBzDqdyGZxFc2k.png)
 
 ## Loader
-Webpack内部把所有文件都当作模块，分析各个模块之间依赖关系产生资源表，最终打包生成指定的文件。遇到import、require加载模块的时候，webpack只支持对JS、JSON文件打包，如果遇到css、sass、png等不同类型的文件，此时就需要配置Loader进行文件编译，确保Webpack能够成功打包。<br/>
+Webpack内部把所有文件都当作模块，分析各个模块之间依赖关系产生资源表，最终打包生成指定的文件。遇到import、require加载模块的时候，webpack只支持对JS、JSON文件打包，如果遇到css、sass、png等不同类型的文件，此时就需要配置Loader进行文件编译生成JS文件，确保Webpack能够成功解析并打包。<br/>
 Loader负责：
 1. 对模块的源码进行转换。
 2. 在import、加载模块时进行预处理文件。
