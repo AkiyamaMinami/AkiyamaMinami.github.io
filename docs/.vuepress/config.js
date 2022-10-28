@@ -118,7 +118,8 @@ module.exports = {
           children: [
             'vue2/two-way-data-binding',
             'vue2/obj_add_attrs',
-            'vue2/computed-watch'
+            'vue2/data-prop',
+            'vue2/computed-watch',
           ]
         },
         {
