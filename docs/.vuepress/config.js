@@ -128,7 +128,8 @@ module.exports = {
             'algorithm/leetcode/001',
             'algorithm/leetcode/020',
             'algorithm/leetcode/pointoffer-024',
-            'algorithm/bubble-sort'
+            'algorithm/bubble-sort',
+            'algorithm/quick-sort'
           ]
         },
         {
