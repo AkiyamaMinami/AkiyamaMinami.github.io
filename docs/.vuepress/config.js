@@ -120,6 +120,7 @@ module.exports = {
             'vue2/obj_add_attrs',
             'vue2/data-prop',
             'vue2/computed-watch',
+            'vue2/v-if-show',
           ]
         },
         {
