@@ -109,6 +109,7 @@ module.exports = {
           children: [
             'network/browser-tcp',
             'network/browser-http',
+            'network/browser-cache',
             'network/browser-https',
           ]
         },
