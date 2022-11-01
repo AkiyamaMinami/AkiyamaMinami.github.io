@@ -36,8 +36,9 @@ var obj = {
 obj.say();
 // mobs => this指向window
 setTimeout(obj.say, 0);
+// 233 => this指向obj
+setTimeout(obj.say.bind(obj), 100);
 ```
-
 ## 使用
 ### apply
 ```js
@@ -117,17 +118,19 @@ Function.prototype.myBind = function (context) {
     if (typeof this !== "function") {
         throw new TypeError("Error");
     }
-    // 保存当前函数执行上下文
-    var self = this;
+    // 保存当前调用myBind的函数
+    var oFn = this;
     // 获取第二个及之后的参数
     var args = Array.prototype.slice.call(arguments, 1);
 
     return function Fn() {
-        return fn.apply(
+        return oFn.apply(
           this instanceof Fn 
-          ? new fn(...arguments)  // bind返回的新函数作为构造函数，原先的this失效
-          //指定的this绑定对象、保证多次传入参数
-          : context , args.concat(...arguments)
+          // bind返回的新函数作为构造函数调用，原先指定的this失效
+          ? new oFn(...arguments)  
+          // 指定的this绑定对象、保证多次传入参数
+          : context , 
+          args.concat(...arguments)
         ); 
     }
 }
