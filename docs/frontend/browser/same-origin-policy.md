@@ -66,7 +66,7 @@ function fn(data) {
 ```
 **带来的弊端：**
 * HTML文件注入恶意JavaScript脚本
-* XSS攻击。
+* XSS攻击
 ```js
 function onClick(){
  // 恶意脚本读取Cookie数据，并将其作为参数添加至恶意站点尾部。

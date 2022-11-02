@@ -70,9 +70,10 @@ HTML解析器遇到script标签会暂停DOM的解析，因为JavaScript有可能
 3. 压缩JavaScript文件体积。
 4. 如果JavaScript文件中并没有操作DOM的代码，可以将其设置为**异步加载**。 **async、defer**进行标记。
    ```js
-    // async标志的脚本文件一旦加载完成，会立即执行
+    // async => 并行请求下载该脚本，避免阻塞浏览器解析HTML。
+    // 文件一旦加载完成，会立即执行
     <script async type="text/javascript" src='test.js'></script>
-    // defer标记的脚本文件，需要在DOMContentLoaded事件之前执行。
+    // defer => HTML完成解析后在触发DOMContentLoaded事件之前执行 => 会阻止DOMContentLoaded事件
     <script defer type="text/javascript" src='test.js'></script>
    ```
 ## CSS同样也阻塞了HTML解析过程

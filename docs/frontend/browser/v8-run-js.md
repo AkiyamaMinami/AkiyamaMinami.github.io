@@ -56,6 +56,7 @@ Ignition：点火器 => 负责启动、负责执行代码
 AST是一种比较重要的数据结构，我们平时碰到的Babel（JS转码）、ESLint（检查JavaScript编写规范）都有涉及。<br/>
 > Babel：ES6转ES5 => ES6源码转成AST => 转成ES5的AST => 生成JavaScript源码。<br/>
 ESLint：源码转AST => 分析AST检查代码规范。
+
 生成AST的两个阶段：
 1. **词法分析（tokenize）**<br/>
 将源码一行行拆解为一个个的token（在语法上不可再分、最小的单个字符或字符串）。

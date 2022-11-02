@@ -15,7 +15,7 @@ DOM本身其实是有一些缺陷的，虚拟DOM的出现就是为此而诞生�
 需要先了解**DOM树生成**相关知识：
 * [JavaScript影响DOM树构建](./render-process-js-dom-tree.md)
 
-DOM提供了一组JavaScript接口用于操作树节点的，**JavaScript操作DOM会影响到整个渲染流水线。**可能触发：
+DOM提供了一组JavaScript接口用于操作树节点的，JavaScript操作DOM会**影响到整个渲染流水线**。可能触发：
 * 重排：样式计算、布局、绘制、栅格化、合成more...
 * 重绘
 * 合成
@@ -30,7 +30,7 @@ DOM提供了一组JavaScript接口用于操作树节点的，**JavaScript操作D
 
 ### 要做的事情
 * 页面发生变化的内容作用到虚拟DOM上，而非直接作用到DOM上。
-* 变化作用到虚拟DOM上，不直接应用到DOM渲染页面，只调整虚拟DOM内部状态（操作虚拟DOM代价变低）。
+* 变化作用到虚拟DOM上，不直接应用到DOM渲染页面，只调整虚拟DOM内部状态（操作虚拟DOM代价相对较低）。
 * 当虚拟DOM收集到足够的变化，再一次性将这些变化作用到真实DOM。
 
 ### React虚拟DOM
