@@ -130,6 +130,7 @@ module.exports = {
           children: [
             'algorithm/leetcode/001',
             'algorithm/leetcode/020',
+            'algorithm/leetcode/141',
             'algorithm/leetcode/pointoffer-024',
             'algorithm/bubble-sort',
             'algorithm/quick-sort'

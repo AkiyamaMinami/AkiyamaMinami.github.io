@@ -270,7 +270,8 @@ demo.then(onResolve)
 3. resolve函数也是在V8内部实现的，执行resolve函数，会触发demo.then设置的回调函数onResolve，所以resolve函数内部调用了通过demo.then设置的onResolve函数。
 4. 由于Promise采用了回调函数延迟绑定技术，所以在执行resolve函数的时候，回调函数还没有绑定，那么只能推迟回调函数的执行。
 
-### 模拟实现Promise
+## 实现Promise
+采用了定时器来推迟onResolve的执行，**使用定时器的效率并不是太高**，好在我们有微任务，**所以Promise又把这个定时器改造成了微任务了**，这样既可以让onResolve_延时被调用，又提升了代码的执行效率。这就是Promise中使用微任务的原由了。
 ```js
 function Bromise(executor) {
     var onResolve_ = null
@@ -290,8 +291,31 @@ function Bromise(executor) {
     executor(resolve, null);
 }
 ```
-这采用了定时器来推迟onResolve的执行，**使用定时器的效率并不是太高**，好在我们有微任务，**所以Promise又把这个定时器改造成了微任务了**，这样既可以让onResolve_延时被调用，又提升了代码的执行效率。这就是Promise中使用微任务的原由了。
 
+### Promise.all 
+[MDN - Promise.all](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Promise/all)
+```js
+// 入参 => Promise实例数组（可迭代对象）
+// return => 新的Promise实例
+const p = Promise.all([p1, p2, p3]);
+
+// 入参Promise实例自定义catch
+const p1 = Promise.resolve('p1');
+const p2 = new Promise((resolve, reject) => {
+  throw new Error('p2error');
+}).catch(e => e);
+
+Promise.all([p1, p2])
+.then(r => 
+  // log => ["p1", Error: p2error]
+  console.log(r)
+)
+.catch(e => console.log(e));
+```
+实例p的状态：
+1. p1、p2、p3**全部fulfilled** => p状态变成fulfilled，同时把p1、p2、p3的返回值组成数组传给p的fulfilled回调函数。
+2. p1、p2、p3**任意一个rejected** => p状态变成rejected，同时把第一个被reject的实例的返回值，传给p的rejected回调函数。
+3. 如果p1、p2、p3自定义了rejected回调函数catch => 如果发生rejected，不会触发all的的catch，rejected值也一起组成数组传给p的fulfilled回调函数。
 ## 总结
 * Web页面是单线程架构模型，这种模型决定了编写代码的形式**异步编程**。
 * 基于异步编程模型写出来的代码会把一些关键的逻辑点打乱，很不易读。
