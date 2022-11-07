@@ -56,11 +56,10 @@ Vue.prototype._init = function (options) {
 }
 ```
 重点关注 => **初始化data（initState）、初始化渲染（initRender）**。
-1. new Vue()执行初始化，对data执行响应化处理，发生Observe中。
-2. 对模板执行编译，编译动态绑定的数据，从data中获取并初始化渲染，编译指令同时绑定更新函数，发生在Compiler中。
-3. 定义Watcher，将来data发生变化时通过Watcher来调用更新函数。
-4. 由于data的某个key在⼀个视图中可能出现多次，所以每个key都需要⼀个管家Dep来管理多个Watcher。
-5. 将来data⼀旦发生变化，会首先找到对应的Dep，通知所有Watcher执行更新函数。
+1. new Vue()执行初始化，对data执行响应化处理，并且对data的每个key创建一个Dep实例，发生Observe中。
+2. 对模板执行编译，编译动态绑定的数据，从data中获取并初始化渲染，每读取到一个key创建一个Watcher添加到对应Dep中，编译指令同时Watcher绑定更新函数，发生在Compiler中。
+3. 定义的Watcher => 将来data发生变化时，都是Watcher来调用更新函数并且更新视图。
+4. 由于data的某个key在⼀个视图中可能出现多次，所以每个key都需要⼀个管家Dep来管理多个Watcher，将来data⼀旦发生变化，会首先找到对应的Dep，通知所有Watcher执行更新函数。
 
 ### 初始化data
 data的初始化主要做两件事：
@@ -165,9 +164,12 @@ class Dep {
 * Vue3使用的是Proxy => Proxy可以创建一个对象的代理，从而实现对object基本操作的拦截和自定义。
 ### Object.defineProperty限制
 * 无法劫持新创建的属性 => Vue.set以创建新属性解决。
-* 无法劫持数组的变化 => Vue自身对数组原生方法进行了劫持。
+* 无法劫持数组的变化 => Vue自身对数组原生方法（push、pop、shift、unshift、splice、sort、reverse）进行了劫持，使其支持响应式。<br/>
 * 无法劫持直接索引修改数组 => 这个问题同样可以用Vue.set解决。
-由于Vue3中改用Proxy实现数据劫持，Vue2中的Vue.set在Vue3中被移除。
+* 每次只能劫持对象一个属性，Vue2需要递归遍历data对象的所有属性依依进行劫持绑定。
+### Vue3 -- Proxy
+* Vue3使用Proxy实现数据劫持，Proxy可以拦截整个对象，无需递归遍历属性。
+* 由于Vue3中改用Proxy实现数据劫持，Vue2中的Vue.set在Vue3中被移除。
 ## 总结
 * 页面上数据发生变化，先找到对应Dep数据依赖，Dep通知对应所有Watcher进行更新。
 * 使用发布订阅模式，定义对象之间一对多的依赖关系。data数据发生变化，所有依赖的Watcher都会被通知然后进行更新。
