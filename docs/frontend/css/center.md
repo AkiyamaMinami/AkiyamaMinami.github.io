@@ -14,7 +14,9 @@ sidebar: 'auto'
 ```css
 .flex {
     display: flex;
+    /* 主轴居中 */
     justify-content: center;
+    /* 垂直轴居中 */
     align-items: center;
 }
 ```
