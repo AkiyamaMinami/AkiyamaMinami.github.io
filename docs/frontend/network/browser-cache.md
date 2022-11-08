@@ -82,4 +82,4 @@ Etag特点：
 
 请求发送之后，服务端校验：
 * If-None-Match ?= Etag
-* If-Modified-Since ?= Last-Modified)
+* If-Modified-Since ?= Last-Modified
