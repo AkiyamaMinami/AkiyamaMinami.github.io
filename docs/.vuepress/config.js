@@ -125,6 +125,13 @@ module.exports = {
           ]
         },
         {
+          title: 'Css',
+          collapsable: false,
+          children: [
+            'css/center',
+          ]
+        },
+        {
           title: 'Algorithm && DataStructure',
           collapsable: false,
           children: [
@@ -142,7 +149,7 @@ module.exports = {
           children: [
             'webpack/loader-plugin',
           ]
-        }
+        },
       ],
     },
   },
