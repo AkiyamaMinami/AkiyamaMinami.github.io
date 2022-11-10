@@ -1,3 +1,3 @@
 > mobs personal blog
 
-[Link](mobs.fun)
+[Link](https://mobs.fun)
