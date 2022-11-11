@@ -5,6 +5,18 @@ publish: false
 ---
 <About />
 
+## 《芜 湖 旅 馆》
+<iframe 
+  src="//player.bilibili.com/player.html?aid=559471041&bvid=BV1Me4y127w5&cid=870396342&page=1" 
+  scrolling="no"
+  border="0" 
+  frameborder="no" 
+  framespacing="0" 
+  allowfullscreen="true"
+  width="380px"
+  height="260px"
+/>
+
 ## mua~~~~~~~~~~~
 <iframe 
   src="//player.bilibili.com/player.html?aid=473440998&bvid=BV1eT411N7Wy&cid=844930492&page=1" 
