@@ -111,6 +111,7 @@ module.exports = {
             'network/browser-http',
             'network/browser-cache',
             'network/browser-https',
+            'network/browser-http1',
           ]
         },
         {
