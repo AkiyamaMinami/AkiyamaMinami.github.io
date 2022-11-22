@@ -99,6 +99,7 @@ module.exports = {
             'browser/queue-event-loop',
             'browser/macro-micro-task',
             'browser/v8-run-js',
+            'browser/v8-garbage-collection',
             'browser/same-origin-policy',
             'browser/xss-attack',
           ]
