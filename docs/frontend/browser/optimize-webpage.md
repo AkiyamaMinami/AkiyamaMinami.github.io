@@ -1,11 +1,11 @@
 ---
 title: 如何去优化浏览器页面？
 categories:
- - 页面优化
+ - Browser
 tags:
  - 加载
  - 交互
- - 关闭
+ - RTT
 date: 2022-12-12
 sidebar: 'auto'
 ---

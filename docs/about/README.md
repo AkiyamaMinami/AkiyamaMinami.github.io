@@ -3,21 +3,19 @@ title: '🏡'
 sidebar: false
 publish: false
 ---
-<About />
-
 ## 🎈
 All at sea.
 
 ## 😡
 一层楼太多人了，好热....
 
-## 好饿(⊙﹏⊙)
-😐
+## 😐
+好饿(⊙﹏⊙)
 
-## 搬家折磨王
-累😐
+## 😐
+搬家折磨王，好累
 
-## 《芜 湖 旅 馆》
+## 🏨
 <iframe 
   src="//player.bilibili.com/player.html?aid=559471041&bvid=BV1Me4y127w5&cid=870396342&page=1" 
   scrolling="no"
@@ -29,7 +27,7 @@ All at sea.
   height="260px"
 />
 
-## mua~~~~~~~~~~~
+## ~m~u~a~
 <iframe 
   src="//player.bilibili.com/player.html?aid=473440998&bvid=BV1eT411N7Wy&cid=844930492&page=1" 
   scrolling="no"
@@ -76,3 +74,5 @@ hmm...
 大半夜睡不着看海绵宝宝；<br/>
 又开始减少食量、细嚼慢咽了(⊙o⊙)… 希望能坚持下去；<br/>
 投简历石沉大海😴；<br/>
+
+<About />
