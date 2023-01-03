@@ -104,6 +104,7 @@ module.exports = {
             'browser/v8-garbage-collection',
             'browser/same-origin-policy',
             'browser/xss-attack',
+            'browser/csrf-attack',
           ]
         },
         {
